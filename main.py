@@ -9,7 +9,14 @@ SHOES_PER_PAGE = 20
 
 def get_shoes(offset=0, search_criteria=None, shoes_per_page=SHOES_PER_PAGE):
     # Connect to the PostgreSQL database
-    conn = psycopg2.connect(host='localhost', database='postgres', user='postgres', password='1234')
+    host = 'cf9gid2f6uallg.cluster-czrs8kj4isg7.us-east-1.rds.amazonaws.com'
+    database = 'dahhms38n4qhjp'
+    user = 'u1859glbeeviu4'
+    password = 'p1459b5fdbad742a7027bb00a122c9f3fb273579ce3d681c8a6b1331e525e5ce8'
+    port = 5432
+
+    # Connect to the database
+    conn = psycopg2.connect(host=host, database=database, user=user, password=password, port=port)
     cursor = conn.cursor()
 
     query = 'SELECT * FROM shoes'
@@ -39,6 +46,7 @@ def get_shoes(offset=0, search_criteria=None, shoes_per_page=SHOES_PER_PAGE):
     # Close the database connection
     cursor.close()
     conn.close()
+    print(total_shoes)
     return shoes, total_shoes
 
 
@@ -62,4 +70,4 @@ def index():
 
 
 if __name__ == '__main__':
-    app.run(debug=False, host='0.0.0.0')
+    app.run(debug=True)
