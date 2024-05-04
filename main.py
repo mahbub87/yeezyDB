@@ -66,4 +66,3 @@ def index():
 
     return render_template('index.html', shoes=shoes, search_criteria=search_criteria, page=page,
                            total_pages=total_pages)
-

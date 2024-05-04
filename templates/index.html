@@ -24,7 +24,7 @@
                 <div class="container">
                     <div class="paragraph">
                         <p>
-                            <a href="https://stockx.com/search?s={{ shoe[1].replace(''', '').replace(' ', '+') }}">{{ shoe[1] }} </a>
+                            <a href="https://stockx.com/search?s={{ shoe[1].replace("'", '').replace(' ', '+') }}">{{ shoe[1] }} </a>
                         </p>
                     </div>
                     <div class="paragraph2">
@@ -62,6 +62,6 @@
         {% endfor %}
     {% endif %}
     </div>
-    </body>
+</body>
 </html>
 
