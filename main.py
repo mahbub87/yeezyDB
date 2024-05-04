@@ -46,7 +46,6 @@ def get_shoes(offset=0, search_criteria=None, shoes_per_page=SHOES_PER_PAGE):
     # Close the database connection
     cursor.close()
     conn.close()
-    print(total_shoes)
     return shoes, total_shoes
 
 
@@ -68,6 +67,3 @@ def index():
     return render_template('index.html', shoes=shoes, search_criteria=search_criteria, page=page,
                            total_pages=total_pages)
 
-
-if __name__ == '__main__':
-    app.run(debug=True)

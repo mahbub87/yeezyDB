@@ -24,7 +24,7 @@
                 <div class="container">
                     <div class="paragraph">
                         <p>
-                            <a href="https://stockx.com/search?s={{ shoe[1].replace("'", '').replace(' ', '+') }}">{{ shoe[1] }}</a>
+                            <a href="https://stockx.com/search?s={{ shoe[1].replace(''', '').replace(' ', '+') }}">{{ shoe[1] }} </a>
                         </p>
                     </div>
                     <div class="paragraph2">
@@ -42,14 +42,14 @@
     </div>
     <div class="page">
     {% set start_page = 1 %}
-{% if page > 5 %}
-    {% set start_page = page - 5 %}
-{% endif %}
+    {% if page > 5 %}
+        {% set start_page = page - 5 %}
+    {% endif %}
 
-{% set end_page = start_page + 9 %}
-{% if end_page > total_pages %}
-    {% set end_page = total_pages %}
-{% endif %}
+    {% set end_page = start_page + 9 %}
+    {% if end_page > total_pages %}
+        {% set end_page = total_pages %}
+    {% endif %}
 
     <div class="pagination">
     {% if search_criteria %}
@@ -61,21 +61,7 @@
             <a href="{{ url_for('index', page=num) }}">{{ num }}</a>
         {% endfor %}
     {% endif %}
-</div>
-
-<script>
-    // Add JavaScript to trigger search when Enter key is pressed
-    document.getElementById('searchInput').addEventListener('keypress', function(event) {
-        if (event.keyCode === 13) { // Enter key pressed
-            event.preventDefault(); // Prevent form submission
-            document.getElementById('searchForm').submit(); // Submit the form
-        }
-    });
-</script>
-</body>
+    </div>
+    </body>
 </html>
 
-<!--
-
-
--->
