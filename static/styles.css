@@ -1,0 +1,117 @@
+/* static/styles.css */
+
+body {
+    font-family: Courier New, serif;
+    font-size: small;
+    margin: 0; /* Reset default margin on the body */
+    padding: 20px; /* Add padding to create left and right margins */
+}
+
+.titleSearchWrap {
+    position: fixed;
+
+    z-index: 1000; /* Ensure it's above other elements */
+}
+
+
+h1 {
+    text-decoration: none;
+    text-align: left;
+    font-size: x-large;
+    font-weight: normal;
+}
+.titleSearchWrap h1 a {
+    text-decoration: none; /* Remove underline */
+    color: inherit; /* Inherit color from parent */
+}
+
+.titleSearchWrap h1 a:hover {
+    text-decoration: none; /* Remove underline on hover */
+    color: inherit; /* Inherit color from parent */
+}
+
+
+input[type="text"] {
+    border: none;
+    border-bottom: 1px solid #000;
+    outline: none;
+    padding: 5px;
+    font-size: 12px;
+    font-family: Courier New, serif;
+}
+
+input[type="text"]:focus {
+    border-bottom: 1px solid #000;
+}
+
+.gridWrapper {
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-top: 100px;
+}
+
+#shoesList {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 0px;
+}
+
+.shoe {
+    border: 1px solid #ddd;
+    padding: 10px;
+    width: 251px;
+    height: 360px;
+    position: relative;
+}
+
+.container {
+    display: flex;
+}
+
+.paragraph {
+    flex: 1;
+}
+.paragraph p a {
+    text-decoration: none; /* Remove underline */
+    color: inherit; /* Inherit color from parent */
+}
+
+.paragraph p a:hover {
+    text-decoration: none; /* Remove underline on hover */
+    color: inherit; /* Inherit color from parent */
+}
+.paragraph2 {
+    flex: 1;
+    text-align: right; /* Align text to the right */
+}
+.imageWrapper {
+    position: absolute;
+    bottom: 0;
+    margin: 15px; /* Adjust the margin as needed */
+}
+
+img {
+    max-width: 100%;
+    height: auto;
+}
+.page {
+  position: relative;
+
+}
+.pagination {
+    font-family: Courier New, serif;
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+}
+
+.pagination a {
+    text-decoration: none; /* Remove underline */
+    color: black; /* Set font color to black */
+}
+
+.pagination a:hover {
+    text-decoration: underline; /* Add underline on hover */
+}
