@@ -8,15 +8,14 @@ SHOES_PER_PAGE = 20
 
 
 def get_shoes(offset=0, search_criteria=None, shoes_per_page=SHOES_PER_PAGE):
-    # Connect to the PostgreSQL database
-    host = 'cf9gid2f6uallg.cluster-czrs8kj4isg7.us-east-1.rds.amazonaws.com'
-    database = 'dahhms38n4qhjp'
-    user = 'u1859glbeeviu4'
-    password = 'p1459b5fdbad742a7027bb00a122c9f3fb273579ce3d681c8a6b1331e525e5ce8'
+    PGHOST = 'ep-mute-flower-a5i3ev2y.us-east-2.aws.neon.tech'
+    PGDATABASE = 'yeezyDB'
+    PGUSER = 'YeezyUser'
+    PGPASSWORD = 'H47YbcWCFeza'
     port = 5432
 
     # Connect to the database
-    conn = psycopg2.connect(host=host, database=database, user=user, password=password, port=port)
+    conn = psycopg2.connect(host=PGHOST, database=PGDATABASE, user=PGUSER, password=PGPASSWORD, port=port)
     cursor = conn.cursor()
 
     query = 'SELECT * FROM shoes'
