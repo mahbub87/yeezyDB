@@ -1,5 +1,6 @@
 from flask import Flask, render_template, request
 import psycopg2
+import os
 
 app = Flask(__name__)
 
@@ -11,11 +12,10 @@ def get_shoes(offset=0, search_criteria=None, shoes_per_page=SHOES_PER_PAGE):
     PGHOST = 'ep-mute-flower-a5i3ev2y.us-east-2.aws.neon.tech'
     PGDATABASE = 'yeezyDB'
     PGUSER = 'YeezyUser'
-    PGPASSWORD = 'H47YbcWCFeza'
     port = 5432
 
     # Connect to the database
-    conn = psycopg2.connect(host=PGHOST, database=PGDATABASE, user=PGUSER, password=PGPASSWORD, port=port)
+    conn = psycopg2.connect(host=PGHOST, database=PGDATABASE, user=PGUSER, password=os.getenv('PG_PASSWORD'), port=port)
     cursor = conn.cursor()
 
     query = 'SELECT * FROM shoes'
